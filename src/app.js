@@ -95,7 +95,6 @@ app.get('/help/*', (req,res) => {
         title: '404 help',
         name: 'Dusan Djokovic',
         errorMessage: 'Help article not found'
-    
     })
 
 })
@@ -109,6 +108,5 @@ app.get ('*', (req,res) => {
 })
 app.listen(3000, () => {
     console.log('Server started on port 3000')
-
 
 })
