@@ -9,6 +9,7 @@ const chalk = require ('chalk')
 
 const express = require('express')
 const app = express ()
+const port = process.env.PORT || 3000
 //defining the path
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
@@ -106,7 +107,7 @@ app.get ('*', (req,res) => {
        })
 
 })
-app.listen(3000, () => {
-    console.log('The server started on port 3000')
+app.listen(port, () => {
+    console.log('The server started on port ' +port)
 
 })
