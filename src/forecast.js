@@ -10,11 +10,13 @@ const forecast = (longitude, latitude, callback) => {
         } else if (body.message) {
             callback(chalk.inverse.yellow('Unable to find location. Try another search.'), undefined)
         } else {
+            //console.log(body.main)
             const temp = body.main.temp
+            const feelsLike = body.main.feels_like
             const airPressure = body.main.pressure
             const desc = body.weather[0].description
 
-            callback(undefined, `Weather description in Serbian: ${desc}.\nIt is currently ${temp} degrees out. Air pressure is ${airPressure} mbar.`)
+            callback(undefined, `Weather description ${desc}.\nIt is currently ${temp} degrees out. It feels as it is ${feelsLike} degrees out.\nAir pressure is ${airPressure} mbar.`)
         }
     })
 }
